@@ -27,7 +27,8 @@
     "tscov": "tscov --min-coverage 90",
     "tscov:d": "tscov --details",
     "publish-package": "npm run build && npm publish",
-    "docs": "typedoc --out docs ./src"
+    "docs": "typedoc --out docs ./src",
+    "test": "npm run build && ENV=TEST nyc mocha ./lib/**/*.test.js --exit"
   },
   "dependencies": {
     "@types/fs-extra": "^5.0.5",
@@ -41,8 +42,15 @@
   },
   "devDependencies": {
     "@liftr/tscov": "^1.4.1",
+    "@types/chai": "^4.1.7",
     "@types/inquirer": "^6.0.3",
+    "@types/mocha": "^5.2.7",
     "@types/node": "^12.0.0",
+    "@types/sinon": "^7.0.12",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "sinon": "^7.3.2",
     "ts-node": "^8.1.0",
     "tslint": "^5.16.0",
     "typedoc": "^0.14.2",

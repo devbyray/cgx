@@ -8,8 +8,10 @@ export class Logger {
     private newLine = '\n';
 
     public showBanner(): void {
-        console.log(cyan(figlet.textSync('CGX', { horizontalLayout: 'full' })));
-        console.info(cyan('Generate all recommended files for the Github community standards'));
+        if (process.env.TEST == 'TEST') {
+            console.log(cyan(figlet.textSync('CGX', { horizontalLayout: 'full' })));
+            console.info(cyan('Generate all recommended files for the Github community standards'));
+        }
     }
       
     public showError(message: string | Error): void {

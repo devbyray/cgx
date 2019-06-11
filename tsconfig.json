@@ -8,9 +8,18 @@
     "outDir": "lib",         
     "rootDir": "src",       
     "strict": true,        
-    "types": ["node"],
+    "types": [
+      "node", 
+      "chai", 
+      "mocha", 
+      "sinon",
+      "inquirer"
+    ],
     "esModuleInterop": true,   
     "resolveJsonModule": true,
   },
-  "exclude": ["node_modules", "lib", "tests", "templates"]
+  "exclude": [
+    "node_modules", 
+    "lib", 
+    "*.spec.ts"]
 }
